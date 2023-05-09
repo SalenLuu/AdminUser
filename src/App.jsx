@@ -10,38 +10,28 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://users-crud.academlo.tech/users/")
+      .get("https://users-crud-htzh.onrender.com/users")
       .then((resp) => setUsers(resp.data))
       .catch((error) => console.error(error));
   }, []);
 
   const getAPIData = () => {
     axios
-      .get("https://users-crud.academlo.tech/users/")
+      .get("https://users-crud-htzh.onrender.com/users")
       .then((resp) => setUsers(resp.data))
       .catch((error) => console.error(error));
   };
 
   const addUser = (data) => {
-    /* 
-        axios
-        .post( "url", body )
-    */
-
     axios
-      .post("https://users-crud.academlo.tech/users/", data)
+      .post("https://users-crud-htzh.onrender.com/users", data)
       .then(() => getAPIData())
       .catch((error) => console.error(error));
   };
 
   const deleteUser = (userId) => {
-    /*
-        axios
-        .delete( "url" )
-    */
-
     axios
-      .delete(`https://users-crud.academlo.tech/users/${userId}/`)
+      .delete(`https://users-crud-htzh.onrender.com/users/${userId}/`)
       .then(() => getAPIData())
       .catch((error) => console.error(error));
   };
